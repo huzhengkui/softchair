@@ -5131,7 +5131,7 @@ var Iban = require('../iban');
 var transfer = require('../transfer');
 
 var blockCall = function (args) {
-    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "eth_getBlockByHash" : "eth_getBlockByNumber";
+    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "okc_getBlockByHash" : "okc_getBlockByNumber";
 };
 
 var transactionFromBlockCall = function (args) {
@@ -5150,7 +5150,7 @@ var uncleCountCall = function (args) {
     return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'okc_getUncleCountByBlockHash' : 'okc_getUncleCountByBlockNumber';
 };
 
-function Eth(web3) {
+function Okc(web3) {
     this._requestManager = web3._requestManager;
 
     var self = this;
@@ -5170,7 +5170,7 @@ function Eth(web3) {
     this.sendIBANTransaction = transfer.bind(null, this);
 }
 
-Object.defineProperty(Eth.prototype, 'defaultBlock', {
+Object.defineProperty(Okc.prototype, 'defaultBlock', {
     get: function () {
         return c.defaultBlock;
     },
@@ -5180,7 +5180,7 @@ Object.defineProperty(Eth.prototype, 'defaultBlock', {
     }
 });
 
-Object.defineProperty(Eth.prototype, 'defaultAccount', {
+Object.defineProperty(Okc.prototype, 'defaultAccount', {
     get: function () {
         return c.defaultAccount;
     },
@@ -6534,23 +6534,23 @@ var exchangeAbi = require('../contracts/SmartExchange.json');
  * @param {Value} value to be tranfered
  * @param {Function} callback, callback
  */
-var transfer = function (eth, from, to, value, callback) {
+var transfer = function (okc, from, to, value, callback) {
     var iban = new Iban(to); 
     if (!iban.isValid()) {
         throw new Error('invalid iban address');
     }
 
     if (iban.isDirect()) {
-        return transferToAddress(eth, from, iban.address(), value, callback);
+        return transferToAddress(okc, from, iban.address(), value, callback);
     }
     
     if (!callback) {
-        var address = eth.icapNamereg().addr(iban.institution());
-        return deposit(eth, from, address, value, iban.client());
+        var address = okc.icapNamereg().addr(iban.institution());
+        return deposit(okc, from, address, value, iban.client());
     }
 
-    eth.icapNamereg().addr(iban.institution(), function (err, address) {
-        return deposit(eth, from, address, value, iban.client(), callback);
+    okc.icapNamereg().addr(iban.institution(), function (err, address) {
+        return deposit(okc, from, address, value, iban.client(), callback);
     });
     
 };
@@ -6564,8 +6564,8 @@ var transfer = function (eth, from, to, value, callback) {
  * @param {Value} value to be tranfered
  * @param {Function} callback, callback
  */
-var transferToAddress = function (eth, from, to, value, callback) {
-    return eth.sendTransaction({
+var transferToAddress = function (okc, from, to, value, callback) {
+    return okc.sendTransaction({
         address: to,
         from: from,
         value: value

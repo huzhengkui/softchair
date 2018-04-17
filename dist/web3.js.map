@@ -39,7 +39,7 @@
     "lib/web3/jsonrpc.js",
     "lib/web3/method.js",
     "lib/web3/methods/db.js",
-    "lib/web3/methods/eth.js",
+    "lib/web3/methods/okc.js",
     "lib/web3/methods/net.js",
     "lib/web3/methods/personal.js",
     "lib/web3/methods/shh.js",
