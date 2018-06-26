@@ -619,7 +619,7 @@ module.exports = SolidityTypeBytes;
 */
 /**
  * @file coder.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -906,7 +906,7 @@ module.exports = SolidityTypeDynamicBytes;
 */
 /**
  * @file formatters.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -1194,7 +1194,7 @@ module.exports = SolidityTypeInt;
 */
 /** 
  * @file param.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -1821,7 +1821,7 @@ module.exports = {
 */
 /** 
  * @file sha3.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -1861,7 +1861,7 @@ module.exports = function (value, options) {
 */
 /**
  * @file utils.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -2617,7 +2617,7 @@ module.exports = Web3;
 */
 /** 
  * @file allevents.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2014
  */
 
@@ -2677,7 +2677,7 @@ AllSolidityEvents.prototype.execute = function (options, callback) {
 
     var o = this.encode(options);
     var formatter = this.decode.bind(this);
-    return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
+    return new Filter(this._requestManager, o, watches.okc(), formatter, callback);
 };
 
 AllSolidityEvents.prototype.attachToContract = function (contract) {
@@ -2707,7 +2707,7 @@ module.exports = AllSolidityEvents;
 */
 /** 
  * @file batch.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -2775,7 +2775,7 @@ module.exports = Batch;
 */
 /**
  * @file contract.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2014
  */
 
@@ -3087,7 +3087,7 @@ module.exports = ContractFactory;
 */
 /** 
  * @file errors.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -3129,7 +3129,7 @@ module.exports = {
 */
 /** 
  * @file event.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2014
  */
 
@@ -3626,8 +3626,8 @@ module.exports = Filter;
 */
 /**
  * @file formatters.js
- * @author Marek Kotewicz <marek@ethdev.com>
- * @author Fabian Vogelsteller <fabian@ethdev.com>
+ * @
+ * @
  * @date 2015
  */
 
@@ -3931,7 +3931,7 @@ module.exports = {
 */
 /**
  * @file function.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -4350,7 +4350,7 @@ module.exports = HttpProvider;
 */
 /** 
  * @file iban.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -4875,7 +4875,7 @@ module.exports = Jsonrpc;
 */
 /**
  * @file method.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -5109,9 +5109,9 @@ module.exports = DB;
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
- * @file eth.js
- * @author Marek Kotewicz <marek@ethdev.com>
- * @author Fabian Vogelsteller <fabian@ethdev.com>
+ * @file okc.js
+ * @
+ * @
  * @date 2015
  */
 
@@ -5512,8 +5512,8 @@ module.exports = Net;
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
- * @author Marek Kotewicz <marek@ethdev.com>
- * @author Fabian Vogelsteller <fabian@ethdev.com>
+ * @
+ * @
  * @date 2015
  */
 
@@ -5695,7 +5695,7 @@ module.exports = Shh;
 */
 /**
  * @file bzz.js
- * @author Alex Beregszaszi <alex@rtfs.hu>
+ * @
  * @date 2016
  *
  * Reference: https://github.com/ethereum/go-ethereum/blob/swarm/internal/web3ext/web3ext.go#L33
@@ -5958,7 +5958,7 @@ module.exports = {
 */
 /** 
  * @file namereg.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
@@ -5999,8 +5999,8 @@ module.exports = {
 */
 /**
  * @file property.js
- * @author Fabian Vogelsteller <fabian@frozeman.de>
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
+ * @
  * @date 2015
  */
 
@@ -6145,11 +6145,11 @@ module.exports = Property;
 */
 /** 
  * @file requestmanager.js
- * @author Jeffrey Wilcke <jeff@ethdev.com>
- * @author Marek Kotewicz <marek@ethdev.com>
- * @author Marian Oancea <marian@ethdev.com>
- * @author Fabian Vogelsteller <fabian@ethdev.com>
- * @author Gav Wood <g@ethdev.com>
+ * @
+ * @
+ * @
+ * @
+ * @
  * @date 2014
  */
 
@@ -6518,7 +6518,7 @@ module.exports = IsSyncing;
 */
 /** 
  * @file transfer.js
- * @author Marek Kotewicz <marek@ethdev.com>
+ * @
  * @date 2015
  */
 
