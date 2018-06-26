@@ -5166,7 +5166,7 @@ function Okc(web3) {
     this.sendIBANTransaction = transfer.bind(null, this);
 }
 
-Object.defineProperty(Eth.prototype, 'defaultBlock', {
+Object.defineProperty(Okc.prototype, 'defaultBlock', {
     get: function () {
         return c.defaultBlock;
     },
@@ -5176,7 +5176,7 @@ Object.defineProperty(Eth.prototype, 'defaultBlock', {
     }
 });
 
-Object.defineProperty(Eth.prototype, 'defaultAccount', {
+Object.defineProperty(Okc.prototype, 'defaultAccount', {
     get: function () {
         return c.defaultAccount;
     },
