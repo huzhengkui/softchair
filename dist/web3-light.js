@@ -5845,7 +5845,7 @@ module.exports = Swarm;
 
 var Method = require('../method');
 
-/// @returns an array of objects describing web3.eth.filter api methods
+
 var okc = function () {
     var newFilterCall = function (args) {
         var type = args[0];
